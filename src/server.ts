@@ -3,8 +3,12 @@ import express, { NextFunction, Request, response, Response } from 'express';
 
 import { router } from "./routes";
 import "./database";
+import cors from "cors";
 
 const app = express();
+
+// Utilizar com front-end.
+app.use(cors());
 
 app.use(express.json());
 app.use(router);
